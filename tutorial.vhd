@@ -36,7 +36,7 @@ architecture behavior of tutorial is
     	led <= led_int;
         
 		led_int(0) <= io_swt_a_out(0);
-		led_int(1) <= '1';
+		led_int(1) <= '0';
 		--led_int(1) <= io_swt_a(1) and not(io_swt_a(2));
 		--led_int(2) <= io_swt_a(2) and io_swt_a(3);
 		--led_int(3) <= led_int(1) or led_int(3);

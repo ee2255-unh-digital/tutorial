@@ -20,20 +20,20 @@ architecture behavior of pulldown is
     
     signal clk_count : unsigned(7 downto 0) := 0;
     signal read_enable : std_logic := '0';
+    signal a : std_logic_vector(7 downto 0);
+    --signal b : std_logic_vector(7 downto 0);
 
     begin
-
         process (clk)
             begin
             if clk'event and clk='1' then --CLK rising edge
                 clk_count <= clk_count + 1;
 
-                swt_state <= in_swt;
+                --a <= in_swt;
+                a <= in_swt;
 
-                if (clk_count = 0) then
-                    read_enable <= '0';
-                elsif (clk_count > 2) then
-                    read_enable <= '1';
+                if (clk_count > 16) then
+                    read_enable <= not(read_enable);
                     clk_count <= 0;
                 end if;
             end if;
@@ -44,6 +44,7 @@ architecture behavior of pulldown is
             begin
             if (read_enable = '1') then
                 in_swt <= "ZZZZZZZZ";
+                swt_state <= a;
             else
                 in_swt <= "00000000";
             end if;

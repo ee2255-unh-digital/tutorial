@@ -4,7 +4,7 @@ Version=Lattice Semiconductor Corporation iCEcube - Release: 2017.08.27940 - Bui
 ProjectName=tutorial
 Vendor=SiliconBlue
 Synthesis=synplify
-ProjectVFiles=../pulldown.vhd,../tutorial.vhd
+ProjectVFiles=../pulldown.vhd=work,../tutorial.vhd=work
 ProjectCFiles=
 CurImplementation=tutorial_Implmnt
 Implementations=tutorial_Implmnt
