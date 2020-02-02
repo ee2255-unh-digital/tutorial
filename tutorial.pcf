@@ -1,0 +1,4 @@
+set_io io_swt_a[0] C11
+set_io clk_in P7
+set_io led[0] J11 -io_std SB_LVCMOS -pullup no
+set_io led[1] K11 -io_std SB_LVCMOS -pullup no
