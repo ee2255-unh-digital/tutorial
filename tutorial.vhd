@@ -18,7 +18,6 @@ end tutorial;
 
 architecture behavior of tutorial is
 
-	signal led_int : std_logic_vector(7 downto 0) := "00000000";
 	signal io_swt_a_out : std_logic_vector(7 downto 0);
 
 	component pulldown
@@ -33,14 +32,7 @@ architecture behavior of tutorial is
 
 		swta_pd: pulldown port map(io_swt_a, clk_in, io_swt_a_out);
 
-    	led <= led_int;
-        
-		led_int(0) <= io_swt_a_out(0);
-		led_int(1) <= '0';
-		--led_int(1) <= io_swt_a(1) and not(io_swt_a(2));
-		--led_int(2) <= io_swt_a(2) and io_swt_a(3);
-		--led_int(3) <= led_int(1) or led_int(3);
-		--led_int(7 downto 4) <= io_swt_a(7 downto 4);
+    	led <= io_swt_a_out;
 
 end behavior;
 		

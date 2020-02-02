@@ -32,7 +32,7 @@ architecture behavior of pulldown is
                 --a <= in_swt;
                 a <= in_swt;
 
-                if (clk_count > 16) then
+                if (clk_count > 2) then
                     read_enable <= not(read_enable);
                     clk_count <= 0;
                 end if;
