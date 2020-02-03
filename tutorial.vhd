@@ -18,7 +18,7 @@ end tutorial;
 
 architecture behavior of tutorial is
 
-	signal io_swt_a_out : std_logic_vector(7 downto 0);
+    signal io_swt_a_out : std_logic_vector(7 downto 0);
 
 	component pulldown
 		port (
